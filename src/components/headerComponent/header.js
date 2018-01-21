@@ -7,10 +7,10 @@ import {
   Nav,
   NavItem,
   NavLink,
-  UncontrolledDropdown,
-  DropdownToggle,
-  DropdownMenu,
-  DropdownItem
+  // UncontrolledDropdown,
+  // DropdownToggle,
+  // DropdownMenu,
+  // DropdownItem
 } from 'reactstrap';
 
 class Header extends Component {
@@ -29,19 +29,23 @@ class Header extends Component {
   }
   render() {
     return (
-      <div>
-        <Navbar color="faded" light expand="md">
-          <NavbarBrand href="/">reactstrap</NavbarBrand>
+      <div className="container-fluid">
+        <Navbar color="faded" light expand="md" className="header-navbar">
+          <NavbarBrand href="/">Social Network</NavbarBrand>
           <NavbarToggler onClick={this.toggle} />
           <Collapse isOpen={this.state.isOpen} navbar>
             <Nav className="ml-auto" navbar>
               <NavItem>
-                <NavLink href="/components/">Components</NavLink>
+                <NavLink href="/components/" className="navbar-items">Home</NavLink>
               </NavItem>
               <NavItem>
-                <NavLink href="https://github.com/reactstrap/reactstrap">Github</NavLink>
+                <NavLink href="#" className="navbar-items">About</NavLink>
               </NavItem>
-              <UncontrolledDropdown nav inNavbar>
+              <NavItem>
+                <NavLink href="#" className="navbar-items">Login</NavLink>
+              </NavItem>
+
+              {/* <UncontrolledDropdown nav inNavbar>
                 <DropdownToggle nav caret>
                   Options
                 </DropdownToggle>
@@ -57,7 +61,7 @@ class Header extends Component {
                     Reset
                   </DropdownItem>
                 </DropdownMenu>
-              </UncontrolledDropdown>
+              </UncontrolledDropdown> */}
             </Nav>
           </Collapse>
         </Navbar>
